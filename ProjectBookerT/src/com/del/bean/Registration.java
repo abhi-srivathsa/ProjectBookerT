@@ -14,14 +14,17 @@ public class Registration {
 	@Id
 	private String login_id;
 	private String email;
-	private String location;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="loc_name")
+	private Location location;
 	private String name;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="login_id")
 	private Login login;
 
-	public Registration(String login_id, String email, String location, String name, Login login) {
+	public Registration(String login_id, String email, Location location, String name, Login login) {
 		super();
 		this.login_id = login_id;
 		this.email = email;
@@ -66,14 +69,14 @@ public class Registration {
 	/**
 	 * @return the location
 	 */
-	public String getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 
 	/**
 	 * @param location the location to set
 	 */
-	public void setLocation(String location) {
+	public void setLocation(Location location) {
 		this.location = location;
 	}
 
@@ -110,9 +113,14 @@ public class Registration {
 	 */
 	@Override
 	public String toString() {
-		return "Registration [login_id=" + login_id + ", email=" + email + ", location=" + location + ", name=" + name
-				+ ", login=" + login + "]";
+		return "Registration [login_id=" + login_id + ", email=" + email + ", location=" + location.getLoc_name() + ", name=" + name
+				+ ", login=" + login.getLogin() + "]";
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	
 	
 	
 }

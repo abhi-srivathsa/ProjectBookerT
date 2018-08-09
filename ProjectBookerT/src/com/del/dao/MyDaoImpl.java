@@ -1,5 +1,8 @@
 package com.del.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -7,6 +10,7 @@ import javax.persistence.Persistence;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import com.del.bean.Location;
 import com.del.bean.Login;
 import com.del.bean.Registration;
 
@@ -51,6 +55,32 @@ public class MyDaoImpl implements MyDao{
 		user = em.find(Registration.class, login_id);
 		//throw No user exists exception
 		return user;
+	}
+
+
+	@Override
+	public List<String> getLocations() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("movie_entity");
+		EntityManager em = emf.createEntityManager();
+		List<Location> locations = em.createQuery(
+	            "SELECT p FROM Location p").getResultList();
+		List<String> location_list=new ArrayList<>();
+		for(Location location:locations)
+		{
+			location_list.add(location.getLoc_name());
+		}
+		return location_list;
+	}
+	
+	public static void main(String[] args) {
+		//testing
+		MyDaoImpl test =new MyDaoImpl();
+		System.out.println("testing locations");
+		System.out.println(test.getLocations());
+		
+		System.out.println("Get user details");
+		Registration user=test.getUserDetails("ash");
+		System.out.println(user);
 	}
 
 }
