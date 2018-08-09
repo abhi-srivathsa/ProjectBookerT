@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to my home page</h1>
-<a href ="showForm.obj"> Show Form</a>
+<jsp:forward page="home.obj"></jsp:forward>
 </body>
 </html>

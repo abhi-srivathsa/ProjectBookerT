@@ -16,18 +16,13 @@ public class MyController {
 	@Autowired
 	private MyDao mDao;
 	@RequestMapping(value = "/home")
-	public String goHome() {
+	public String goHome(Model model) {
 		System.out.println("Go to home");
-		return "home";
-	}
-
-	@RequestMapping(value = "/showForm")
-	public String showForm(Model model) {
-		System.out.println("show form");
 		model.addAttribute(new Login());
-		return "login";
+		return "index";
 	}
 
+	
 	@RequestMapping(value = "/checkLogin")
 	public String checkLogin(@ModelAttribute(value = "login") Login login, Model model) {
 		System.out.println("checking login");

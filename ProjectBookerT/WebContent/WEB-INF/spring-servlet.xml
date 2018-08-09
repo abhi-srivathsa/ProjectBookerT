@@ -13,5 +13,5 @@
 	<property name="prefix" value="/"/>
 	<property name="suffix" value=".jsp" />
 	</bean>
-	<bean id="dao" class = "com.del.dao.MyDaoImpl" />
+	<!-- <bean id="dao" class = "com.del.dao.MyDaoImpl" /> -->
 	</beans>
