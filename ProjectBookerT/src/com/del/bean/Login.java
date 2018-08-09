@@ -5,10 +5,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="login_hib")
+@Table(name="login")
 public class Login {
 	@Id
-	private String login;
+	private String login_id;
 	private String password;
 	public Login() {
 		super();
@@ -16,14 +16,14 @@ public class Login {
 	}
 	public Login(String login, String password) {
 		super();
-		this.login = login;
+		this.login_id = login;
 		this.password = password;
 	}
 	public String getLogin() {
-		return login;
+		return login_id;
 	}
 	public void setLogin(String login) {
-		this.login = login;
+		this.login_id = login;
 	}
 	public String getPassword() {
 		return password;
@@ -33,7 +33,7 @@ public class Login {
 	}
 	@Override
 	public String toString() {
-		return "Login [login=" + login + ", password=" + password + "]";
+		return "Login [login=" + login_id + ", password=" + password + "]";
 	}
 	
 	

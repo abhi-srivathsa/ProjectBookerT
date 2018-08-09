@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.del.bean.Login;
 import com.del.dao.MyDao;
+import com.del.service.MyService;
 
 @Controller
 public class MyController {
 	@Autowired
-	private MyDao mDao;
+	private MyService mService;
 	@RequestMapping(value = "/home")
 	public String goHome(Model model) {
 		System.out.println("Go to home");
@@ -29,7 +30,7 @@ public class MyController {
 		System.out.println(login);
 		//ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-servlet.xml");
 		
-		boolean success = mDao.checklogin(login);
+		boolean success = mService.checklogin(login);
 		if (success)
 			return "success";
 		else

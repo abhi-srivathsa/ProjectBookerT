@@ -1,0 +1,23 @@
+create table loc_details
+(
+loc_name VARCHAR(50) Primary Key
+);
+
+create table login_details
+( login_id VARCHAR(50) Primary Key,
+ email VARCHAR(50) NOT NULL,
+ location VARCHAR(50) REFERENCES loc_details,
+ name VARCHAR(50) NOT NULL);
+
+
+create table login
+(
+login_id VARCHAR(50) primary Key References login_details,
+password VARCHAR(50) NOT NULL);
+
+insert into loc_details(loc_name) VALUES('Delhi');
+insert into loc_details(loc_name) VALUES('Bengaluru');
+insert into loc_details(loc_name) VALUES('Mumbai');
+
+insert into login_details(login_id,email,location,name) VALUES('ash','ash@gmail.com','Delhi','Ashwani Tanwar');
+insert into login(login_id,password) VALUES ('ash','ash123');
