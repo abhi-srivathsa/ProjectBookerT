@@ -33,6 +33,7 @@ public class MyController {
 	public String addUser(@ModelAttribute(value = "reg") Registration reg, Model model) {
 		System.out.println("Add");
 		System.out.println(reg);
+		
 		return "register";
 	}
 	@RequestMapping(value = "/checkLogin")
