@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.del.bean.Login;
+import com.del.bean.Registration;
 
 @Repository("mDao")
 public class MyDaoImpl implements MyDao{
@@ -26,6 +27,30 @@ public class MyDaoImpl implements MyDao{
 			success = true;
 		System.out.println("success in mDAO:"+success);
 		return success;
+	}
+
+
+	@Override
+	public void registerUser(Registration newUser) {
+		System.out.println("Reached Registration Page");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("movie_entity");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(newUser);
+		em.getTransaction().commit();
+		System.out.println("new User saved");
+	}
+
+
+	@Override
+	public Registration getUserDetails(String login_id) {
+		Registration user=null;
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("movie_entity");
+		EntityManager em = emf.createEntityManager();
+		//System.out.println("Reached with login:"+login.getLogin()+"pas:"+login.getPassword());
+		user = em.find(Registration.class, login_id);
+		//throw No user exists exception
+		return user;
 	}
 
 }
