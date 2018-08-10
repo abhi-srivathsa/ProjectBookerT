@@ -1,5 +1,7 @@
 package com.del.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -25,16 +27,21 @@ public class MyServiceImpl implements MyService {
 	}
 
 	@Override
-	public void registerUser(String login_id, String password, String email, String location, String name) {
+	public void registerUser(Registration newUser) {
 		// TODO Auto-generated method stub
-		Registration newUser=new Registration(login_id, email, location, name, new Login(login_id,password));
 		mDao.registerUser(newUser);
 	}
 
 	@Override
-	public Registration getUserDetails(String login_id) {
+	public Registration getUserDetails(Login login) {
 		// TODO Auto-generated method stub
-		return mDao.getUserDetails(login_id);
+		return mDao.getUserDetails(login);
+	}
+
+	@Override
+	public List<String> getLocations() {
+		// TODO Auto-generated method stub
+		return mDao.getLocations();
 	}
 
 }

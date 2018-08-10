@@ -20,9 +20,9 @@
 <title>Home page</title>
 </head>
 <body>
-<div class = "headmain text-center">
-	
-		<h1>Welcome to BookerT</h1>
+	<div class="headmain text-center">
+
+		<h1 class="display-1" style="font-family: ostrich">Welcome to BookerT</h1>
 		<p>Movie Ticket booking service</p>
 	</div>
 	<div class="jumbotron text-center">
@@ -57,13 +57,29 @@
 
 		</div>
 	</div>
-	<div class = "text-center">
-	<c:url var="myAction" value="checkLogin.obj" />
-	 <form:form  action="${myAction}" method="post" modelAttribute="login">
-			Login	:	<form:input path="login"/><br>
-			Password		:	<form:input path="password"/><br>
-			<input type="submit" value="LOGIN" />
-			<button type="button" class="btn btn-light"><a href="register.obj">Register</a></button>
-	</form:form> 
+	<div class="text-center display-4">
+		<c:url var="myAction" value="checkLogin.obj" />
+		<form:form action="${myAction}" method="post" modelAttribute="login">
+			<table align="center">
+				<tr>
+					<td>Login :</td>
+					<td><form:input path="login" required="required"/></td>
+				</tr>
+
+				<tr>
+					<td>Password :</td>
+					<td style="color:black"><form:password  path="password" required="required"/><br></td>
+				</tr>
+				<tr>
+				<td></td>
+					<td><input class="btn btn-outline-light btn-lg" type="submit" value="LOGIN" />
+
+						<button type="button" class="btn btn-outline-light btn-lg">
+							<a href="register.obj">Register</a>
+						</button></td>
+				</tr>
+			</table>
+		</form:form>
+	</div>
 </body>
 </html>

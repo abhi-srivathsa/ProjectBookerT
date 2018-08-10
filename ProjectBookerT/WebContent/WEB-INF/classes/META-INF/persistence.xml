@@ -8,6 +8,8 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="movie_entity">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>com.del.bean.Login</class>
+		<class>com.del.bean.Registration</class>
+		<class>com.del.bean.Location</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="oracle.jdbc.driver.OracleDriver" />

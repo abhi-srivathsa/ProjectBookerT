@@ -1,1 +1,19 @@
 @charset "ISO-8859-1";
+@font-face {
+    font-family: ostrich;
+    src: url(fonts/OstrichSans-Bold.otf);
+}
+body{
+	background-image: url("../images/bg2.jpg") !important;
+	color: white !important;
+	font-family: ostrich !important;
+}
+.headmain{
+	font-family: ostrich !important;
+}
+.jumbotron {
+    background: none !important;
+    width=1100px !important;
+     height=300px !important;
+     padding: 0 !important;
+}
