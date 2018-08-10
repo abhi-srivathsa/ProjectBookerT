@@ -47,12 +47,12 @@ public class MyDaoImpl implements MyDao{
 
 
 	@Override
-	public Registration getUserDetails(String login_id) {
+	public Registration getUserDetails(Login login) {
 		Registration user=null;
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("movie_entity");
 		EntityManager em = emf.createEntityManager();
 		//System.out.println("Reached with login:"+login.getLogin()+"pas:"+login.getPassword());
-		user = em.find(Registration.class, login_id);
+		user = em.find(Registration.class, login.getLogin());
 		//throw No user exists exception
 		return user;
 	}
@@ -79,7 +79,7 @@ public class MyDaoImpl implements MyDao{
 		System.out.println(test.getLocations());
 		
 		System.out.println("Get user details");
-		Registration user=test.getUserDetails("ash");
+		Registration user=test.getUserDetails(new Login("ash","ash123"));
 		System.out.println(user);
 	}
 

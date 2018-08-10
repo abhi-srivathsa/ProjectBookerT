@@ -9,6 +9,6 @@ public interface MyService {
 
 	boolean checklogin(Login login);
 	void registerUser(Registration user);
-	Registration getUserDetails(String login_id);
+	Registration getUserDetails(Login login_id);
 	List<String> getLocations();
 }

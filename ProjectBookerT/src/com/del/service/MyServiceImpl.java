@@ -33,9 +33,9 @@ public class MyServiceImpl implements MyService {
 	}
 
 	@Override
-	public Registration getUserDetails(String login_id) {
+	public Registration getUserDetails(Login login) {
 		// TODO Auto-generated method stub
-		return mDao.getUserDetails(login_id);
+		return mDao.getUserDetails(login);
 	}
 
 	@Override

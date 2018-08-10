@@ -11,7 +11,7 @@ public interface MyDao {
 
 	void registerUser(Registration newUser);
 
-	Registration getUserDetails(String login_id);
+	Registration getUserDetails(Login login);
 
 	List<String> getLocations();
 
