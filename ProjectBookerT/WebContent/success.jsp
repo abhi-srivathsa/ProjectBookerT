@@ -7,6 +7,6 @@
 <title>Success</title>
 </head>
 <body>
-<jsp:forward page="movies.obj"></jsp:forward>
+<jsp:forward page="movies.obj" ></jsp:forward>
 </body>
 </html>

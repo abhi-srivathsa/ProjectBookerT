@@ -44,8 +44,11 @@ public class MyController {
 	@RequestMapping(value = "/movies")
 	public String movies(@ModelAttribute(value = "login") Login login, Model model) {
 		System.out.println("Movie page");
+		System.out.println(login);
 		Registration regi = mService.getUserDetails(login);
-		model.addAttribute(regi);
+		System.out.println(regi);
+		//model.addAttribute("mov", new3);
+		model.addAttribute("regi",regi);
 		return "movies";
 	}
 	
