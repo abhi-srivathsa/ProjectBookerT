@@ -16,7 +16,7 @@ public class Registration {
 	private String login_id;
 	private String email;
 	
-	@OneToOne()
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="location")
 	private Location location;
 	private String name;

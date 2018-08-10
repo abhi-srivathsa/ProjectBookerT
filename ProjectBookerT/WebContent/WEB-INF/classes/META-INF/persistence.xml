@@ -10,6 +10,12 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 		<class>com.del.bean.Login</class>
 		<class>com.del.bean.Registration</class>
 		<class>com.del.bean.Location</class>
+		<class>com.del.bean.Theatre</class>
+		<class>com.del.bean.Movie</class>
+		<class>com.del.bean.Seat</class>
+		<class>com.del.bean.ShowTime</class>
+		<class>com.del.bean.Booking</class>
+		<class>com.del.bean.MovieSeats</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="oracle.jdbc.driver.OracleDriver" />
