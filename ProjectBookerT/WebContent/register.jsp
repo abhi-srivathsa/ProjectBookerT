@@ -8,16 +8,25 @@
 <title>Register</title>
 </head>
 <body>
+	<h1>Sign Up!</h1>
 	<form:form action="adduser.obj" method="post" modelAttribute="reg">
 Enter Username : <form:input path="login_id" />
+		<br>
 Enter Password		:	<form:input path="login.password" />
+		<br>
 Enter name	:	<form:input path="name" />
-Enter email	:	<form:input path="email" //>
+		<br>
+Enter email	:	<form:input path="email" />
+		<br>
 Select location : <form:select path="location">
+			<br>
+			<form:options items = "${loc}" />
+
+			<%-- 
 			<form:option value="Bangalore">Bangalore</form:option>
 			<form:option value="Delhi">Delhi</form:option>
 			<form:option value="Mumbai">Mumbai</form:option>
-			<form:option value="Chennai">Chennai</form:option>
+			<form:option value="Chennai">Chennai</form:option> --%>
 		</form:select>
 
 
