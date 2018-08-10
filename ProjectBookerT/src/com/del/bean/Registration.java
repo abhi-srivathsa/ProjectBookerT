@@ -1,6 +1,7 @@
 package com.del.bean;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -15,8 +16,8 @@ public class Registration {
 	private String login_id;
 	private String email;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="loc_name")
+	@OneToOne()
+	@JoinColumn(name="location")
 	private Location location;
 	private String name;
 	
@@ -113,8 +114,8 @@ public class Registration {
 	 */
 	@Override
 	public String toString() {
-		return "Registration [login_id=" + login_id + ", email=" + email + ", location=" + location.getLoc_name() + ", name=" + name
-				+ ", login=" + login.getLogin() + "]";
+		return "Registration [login_id=" + login_id + ", email=" + email + ", location=" + location + ", name=" + name
+				+ ", login=" + login + "]";
 	}
 
 	/* (non-Javadoc)

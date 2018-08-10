@@ -1,5 +1,6 @@
 package com.del.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,11 +10,12 @@ import javax.persistence.Table;
 public class Location {
 
 	@Id
-	private String loc_name;
+	@Column(name="loc_name")
+	private String location;
 
-	public Location(String loc_name) {
+	public Location(String location) {
 		super();
-		this.loc_name = loc_name;
+		this.location = location;
 	}
 
 	public Location() {
@@ -21,27 +23,28 @@ public class Location {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @return the location
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Location [loc_name=" + loc_name + "]";
+		return "Location [location=" + location + "]";
 	}
 
-	/**
-	 * @return the loc_name
-	 */
-	public String getLoc_name() {
-		return loc_name;
-	}
-
-	/**
-	 * @param loc_name the loc_name to set
-	 */
-	public void setLoc_name(String loc_name) {
-		this.loc_name = loc_name;
-	}
 	
 	
 }

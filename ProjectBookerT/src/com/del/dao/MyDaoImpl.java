@@ -67,7 +67,7 @@ public class MyDaoImpl implements MyDao{
 		List<String> location_list=new ArrayList<>();
 		for(Location location:locations)
 		{
-			location_list.add(location.getLoc_name());
+			location_list.add(location.getLocation());
 		}
 		return location_list;
 	}
@@ -81,6 +81,10 @@ public class MyDaoImpl implements MyDao{
 		System.out.println("Get user details");
 		Registration user=test.getUserDetails(new Login("ash","ash123"));
 		System.out.println(user);
+		System.out.println("Regioster new user");
+		Registration newUser=new Registration("jay", "jay@gmail.com", new Location("Mumbai"), "Jay Shah", new Login("jay","jay123"));
+		test.registerUser(newUser);
+		System.out.println("Done");
 	}
 
 }
