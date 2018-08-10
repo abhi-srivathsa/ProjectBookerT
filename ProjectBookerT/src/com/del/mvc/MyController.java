@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.del.bean.Login;
+import com.del.bean.Registration;
 import com.del.dao.MyDao;
 import com.del.service.MyService;
 
@@ -22,8 +23,19 @@ public class MyController {
 		model.addAttribute(new Login());
 		return "index";
 	}
-
-	
+	@RequestMapping(value = "/register")
+	public String goRegister(Model model) {
+		System.out.println("Register");
+		model.addAttribute("reg",new Registration());
+		return "register";
+	}
+	@RequestMapping(value = "/adduser")
+	public String addUser(@ModelAttribute(value = "reg") Registration reg, Model model) {
+		System.out.println("Add");
+		System.out.println(reg);
+		
+		return "register";
+	}
 	@RequestMapping(value = "/checkLogin")
 	public String checkLogin(@ModelAttribute(value = "login") Login login, Model model) {
 		System.out.println("checking login");
