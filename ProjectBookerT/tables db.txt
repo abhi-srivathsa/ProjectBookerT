@@ -21,3 +21,37 @@ insert into loc_details(loc_name) VALUES('Mumbai');
 
 insert into login_details(login_id,email,location,name) VALUES('ash','ash@gmail.com','Delhi','Ashwani Tanwar');
 insert into login(login_id,password) VALUES ('ash','ash123');
+
+
+create table cinema_halls
+(
+cinema_id VARCHAR(50) Primary Key,
+cinema_name VARCHAR(50),
+location VARCHAR(50) references loc_details);
+
+create table movies
+(
+movie_id VARCHAR(50) Primary Key,
+name VARCHAR(100));
+
+create table availability
+(
+cinema_id varchar(50) references cinema_halls,
+movie_id varchar(50) references movies,
+movie_date date,
+movie_time time,
+row varchar(10),
+seat varchar(10),
+seat_avail boolean,
+primary Key(cinema_id,movie_id,movie_date,movie_time,row,seat));
+
+create table bookings
+(
+booking_id varchar(50) primary key,
+cinema_id varchar(50) references cinema_halls,
+movie_id varchar(50) references movies,
+customer_id varchar(50) references login_details,
+movie_date date,
+movie_time time,
+row varchar(10),
+seat varchar(10));
